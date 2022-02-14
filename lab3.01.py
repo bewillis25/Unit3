@@ -30,3 +30,19 @@ Maybe
 
 Outlook is not good
 '''
+
+# Dice Roll Simultaion
+import random
+dice = random.randint(1,6)
+print(f"You rolled a {dice}")
+
+# Random Choice, picks a random value from a list
+import random
+list1 = [1,2,3,4,5,6]
+print(random.choice(list1))
+
+# Magic 8-ball Game
+import random
+list2 = ["Outlook is good","Ask again later","Yes","No","Most likely no","Most likely yes","Maybe","Outlook is not good"]
+answer = input("Ask a question for the magic 8-Ball: ")
+print(random.choice(list2))
