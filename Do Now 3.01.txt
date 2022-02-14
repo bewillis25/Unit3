@@ -1,0 +1,20 @@
+'''
+#################
+Do Now 3.01
+#################
+1.  In your Console
+Type the following code:
+    1   import random
+    2   random.randint(0, 3)
+    3   random.randint(0, 3)
+    3   print(random.randint(0, 3))
+    4   print(random.randint(0, 3))
+    5   print(random.randint(0, 3))
+2.  In your Notebook
+Respond to the following
+    1.  What does randint() do? Gives a random integer for a gievn number range
+
+    2.  What do the values 0 and 3 do? Try changing those numbers, rerun the program, and write down what changed. The numbers 0 and 3 are the limits for the random integers, it can only choose a random integeer from 0 t0 3, or 0,1,2,3. If we change 3 to 4, we will now be able to see 4 in the random function.
+
+    3.  What is the difference between random.randint(0,3) and print(random.randint(0,3))? random.randint(0,3) stores the value as a variable, but print(random.randint(0,3)) prints the value, not storing it as a variable.
+'''
