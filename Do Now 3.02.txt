@@ -1,0 +1,20 @@
+#############
+Do Now 3.02
+#############
+In your Console
+Type the following code:
+def my_function():
+  print("THIS IS MY FUNCTION!")
+  
+In Your Notebook
+Respond to the following
+What does my_function do? It's a function, whcih takes in parameters that can change the data output it gives
+
+How would you call the function? Practice calling my_function and checking that it does what you expect it to. 
+def my_function():
+  print("THIS IS MY FUNCTION!")
+my_function()
+
+How would you add arguments to my_function?
+def my_function(parameter1, parameter2):
+  print(parameter1 + "" + parameter2)
