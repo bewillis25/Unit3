@@ -44,16 +44,18 @@ birthday_song(name)
 
 import random
 def random_card():
-  number = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-  suit = ['hearts','diamonds','spades','clubs']
-  random_number = random.choice(number)
-  random_suit = random.choice(suit)
-  card = []
-  card.append(f"{random_number} of {random_suit}")
-  print(card)
-def hand():
-  [random_card(),random_card(),random_card(),random_card(),random_card()]
-hand()
+    number = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+    suit = ['hearts','diamonds','spades','clubs']
+    random_number = random.choice(number)
+    random_suit = random.choice(suit)
+    card = []
+    card.append(f"{random_number} of {random_suit}")
+    print(card)
+random_card()
+  
+  
+
+
 
 
 
