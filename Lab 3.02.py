@@ -34,33 +34,34 @@ Read about list aliasing in section 3.4 of the associated reading, and write dow
 Remember, the associated reading is in the "SWBAT" section on moodle!
 '''
 
-'''
-# Birthday Song
+
+# Name: birthday_song
+# Purpose: birthday_song prints out a personalized birthday song
+# Arguments: name, string
+# Returns: none
 name = input("What is your name? ")
 def birthday_song(name):
   print(f"Happy Birthday to you, Happy Birthday to you, Happy Birthday dear {name}, Happy Birthday to you.")
 birthday_song(name)
-'''
+
+
+
 
 import random
+i = 0
 def random_card():
-    number = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-    suit = ['hearts','diamonds','spades','clubs']
-    random_number = random.choice(number)
-    random_suit = random.choice(suit)
-    card = []
-    card.append(f"{random_number} of {random_suit}")
-    print(card)
-random_card()
+  number = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+  random_number = random.choice(number)
+  card = []
+  card.append(random_number)
+  print(card)
+while i < 5:
+  random_card()
+  i += 1
+
   
+
+
   
-
-
-
-
-
-
-
-
-
+ 
 

@@ -222,3 +222,30 @@ def shuffled_deck():
 Add on when finished with above:
 Instead of closing the program when the deck is empty, create a way for the user to play again.
 '''
+
+
+import random
+deck = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','1','2','3','4','5','6','7','8','9','10','11','12','13','14','1','2','3','4','5','6','7','8','9','10','11','12','13','14','1','2','3','4','5','6','7','8','9','10','11','12','13','14']
+random.shuffle(deck)
+name1 = input("Enter a name for player 1: ")
+name2 = input("Enter a name for player 2: ")
+i = 0
+# name: player_turn
+# purpose: takes in a player name and draws/removes a card from the deck, prints "user drew card x", and returns the value
+# Arguments: player_name as string, deck as list
+# returns: integer
+def player_turn(list):
+    i = 0
+    while i < 53:
+        print(f"{name1} drew card {list[i]}") 
+        print(f"{name2} drew card {list[i+1]}")
+        i = i + 2
+def compare_scores(score1, score2):
+    if score1 > score2:
+        print(f"{name1} drew the high card.")
+    elif score2 > score1:
+        print(f"{name2} drew the high card.")
+    else:
+        print("There is war.")
+
+ 
