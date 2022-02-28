@@ -230,22 +230,30 @@ random.shuffle(deck)
 name1 = input("Enter a name for player 1: ")
 name2 = input("Enter a name for player 2: ")
 i = 0
-# name: player_turn
-# purpose: takes in a player name and draws/removes a card from the deck, prints "user drew card x", and returns the value
-# Arguments: player_name as string, deck as list
-# returns: integer
 def player_turn(list):
     i = 0
+    j = 1
     while i < 53:
-        print(f"{name1} drew card {list[i]}") 
-        print(f"{name2} drew card {list[i+1]}")
+        score1 = int(list[i])
+        score2 = int(list[i+1])
+        p1_card_num = j
+        p2_card_num = j
+        print(f"{name1} drew card {score1}") 
+        print(f"{name2} drew card {score2}")
+        if score1 > score2:
+            print(f"{name1} has the high card.")
+            p1_card_num += 1
+            p2_card_num -= 1
+            print(f"{name1}: {p1_card_num}")
+            print(f"{name2}: {p2_card_num}")
+        elif score2 > score1:
+            print(f"{name2} has the high card.")
+            p1_card_num -= 1
+            p2_card_num += 1
+            print(f"{name1}: {p1_card_num}")
+            print(f"{name2}: {p2_card_num}")
+        else:
+            print("There is war.")
         i = i + 2
-def compare_scores(score1, score2):
-    if score1 > score2:
-        print(f"{name1} drew the high card.")
-    elif score2 > score1:
-        print(f"{name2} drew the high card.")
-    else:
-        print("There is war.")
-
- 
+        j = j + 1
+player_turn(deck)
