@@ -223,37 +223,59 @@ Add on when finished with above:
 Instead of closing the program when the deck is empty, create a way for the user to play again.
 '''
 
-
+# War Card Game
 import random
 deck = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','1','2','3','4','5','6','7','8','9','10','11','12','13','14','1','2','3','4','5','6','7','8','9','10','11','12','13','14','1','2','3','4','5','6','7','8','9','10','11','12','13','14']
 random.shuffle(deck)
 name1 = input("Enter a name for player 1: ")
 name2 = input("Enter a name for player 2: ")
-i = 0
 def player_turn(list):
     i = 0
-    j = 1
+    p1_card_num = 0
+    p2_card_num = 0
     while i < 53:
         score1 = int(list[i])
         score2 = int(list[i+1])
-        p1_card_num = j
-        p2_card_num = j
         print(f"{name1} drew card {score1}") 
         print(f"{name2} drew card {score2}")
         if score1 > score2:
             print(f"{name1} has the high card.")
-            p1_card_num += 1
-            p2_card_num -= 1
+            p1_card_num += 2
+            p2_card_num += 0
             print(f"{name1}: {p1_card_num}")
-            print(f"{name2}: {p2_card_num}")
+            print(f"{name2}: {p2_card_num} \n")
         elif score2 > score1:
             print(f"{name2} has the high card.")
-            p1_card_num -= 1
-            p2_card_num += 1
+            p1_card_num += 0
+            p2_card_num += 2
             print(f"{name1}: {p1_card_num}")
-            print(f"{name2}: {p2_card_num}")
+            print(f"{name2}: {p2_card_num} \n")
         else:
-            print("There is war.")
+            print("War")
+            p1_card_num += 0
+            p2_card_num += 0
+            print(f"{name1}: {p1_card_num}")
+            print(f"{name2}: {p2_card_num} \n")
         i = i + 2
-        j = j + 1
+    if p1_card_num > p2_card_num:
+        print(f"Winner: {name1}")
+    elif p2_card_num > p1_card_num:
+        print(f"Winner: {name2}")
+    else:
+        print("It was a tie")
 player_turn(deck)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
