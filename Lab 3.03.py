@@ -229,13 +229,15 @@ deck = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','1','2','3'
 random.shuffle(deck)
 name1 = input("Enter a name for player 1: ")
 name2 = input("Enter a name for player 2: ")
-def player_turn(list):
+def player_turn():
     i = 0
     p1_card_num = 0
     p2_card_num = 0
-    while i < 53:
-        score1 = int(list[i])
-        score2 = int(list[i+1])
+    while i < 52:
+        score1 = int(deck[i])
+        score2 = int(deck[i+1])
+        war_score1 = int(deck[i+2])
+        war_score2 = int(deck[i+3])
         print(f"{name1} drew card {score1}") 
         print(f"{name2} drew card {score2}")
         if score1 > score2:
@@ -244,26 +246,41 @@ def player_turn(list):
             p2_card_num += 0
             print(f"{name1}: {p1_card_num}")
             print(f"{name2}: {p2_card_num} \n")
+            i += 2
         elif score2 > score1:
             print(f"{name2} has the high card.")
             p1_card_num += 0
             p2_card_num += 2
             print(f"{name1}: {p1_card_num}")
             print(f"{name2}: {p2_card_num} \n")
+            i += 2
         else:
             print("War")
-            p1_card_num += 0
-            p2_card_num += 0
             print(f"{name1}: {p1_card_num}")
             print(f"{name2}: {p2_card_num} \n")
-        i = i + 2
+            if war_score1 > war_score2:
+                p1_card_num += 4
+                print(f"{name1} drew card {war_score1}") 
+                print(f"{name2} drew card {war_score2}")
+                print(f"{name1} won War of 4 cards")
+                print(f"{name1}: {p1_card_num}")
+                print(f"{name2}: {p2_card_num} \n")
+                i += 4
+            elif war_score2 > war_score1:
+                p2_card_num += 4
+                print(f"{name1} drew card {war_score1}") 
+                print(f"{name2} drew card {war_score2}")
+                print(f"{name2} won War of 4 cards")
+                print(f"{name1}: {p1_card_num}")
+                print(f"{name2}: {p2_card_num} \n")
+                i += 4
     if p1_card_num > p2_card_num:
         print(f"Winner: {name1}")
     elif p2_card_num > p1_card_num:
         print(f"Winner: {name2}")
     else:
         print("It was a tie")
-player_turn(deck)
+player_turn()
 
 
 
