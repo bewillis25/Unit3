@@ -231,13 +231,14 @@ name1 = input("Enter a name for player 1: ")
 name2 = input("Enter a name for player 2: ")
 def player_turn():
     i = 0
+    j = 2
     p1_card_num = 0
     p2_card_num = 0
     while i < 52:
         score1 = int(deck[i])
         score2 = int(deck[i+1])
-        war_score1 = int(deck[i+2])
-        war_score2 = int(deck[i+3])
+        war_score1 = int(deck[i+j])
+        war_score2 = int(deck[i+1+j])
         print(f"{name1} drew card {score1}") 
         print(f"{name2} drew card {score2}")
         if score1 > score2:
@@ -259,21 +260,42 @@ def player_turn():
             print(f"{name1}: {p1_card_num}")
             print(f"{name2}: {p2_card_num} \n")
             if war_score1 > war_score2:
-                p1_card_num += 4
+                p1_card_num += 2*j
                 print(f"{name1} drew card {war_score1}") 
                 print(f"{name2} drew card {war_score2}")
-                print(f"{name1} won War of 4 cards")
+                print(f"{name1} won War of {2*j} cards")
                 print(f"{name1}: {p1_card_num}")
                 print(f"{name2}: {p2_card_num} \n")
                 i += 4
             elif war_score2 > war_score1:
-                p2_card_num += 4
+                p2_card_num += 2*j
                 print(f"{name1} drew card {war_score1}") 
                 print(f"{name2} drew card {war_score2}")
-                print(f"{name2} won War of 4 cards")
+                print(f"{name2} won War of {2*j} cards")
                 print(f"{name1}: {p1_card_num}")
                 print(f"{name2}: {p2_card_num} \n")
                 i += 4
+            elif war_score1 == war_score2:
+                print("War")
+                print(f"{name1}: {p1_card_num}")
+                print(f"{name2}: {p2_card_num} \n")
+                j+= 2
+                if war_score1 > war_score2:
+                    p1_card_num += 2*j
+                    print(f"{name1} drew card {war_score1}") 
+                    print(f"{name2} drew card {war_score2}")
+                    print(f"{name1} won War of {2*j} cards")
+                    print(f"{name1}: {p1_card_num}")
+                    print(f"{name2}: {p2_card_num} \n")
+                    i += 4
+                elif war_score2 > war_score1:
+                    p2_card_num += 2*j
+                    print(f"{name1} drew card {war_score1}") 
+                    print(f"{name2} drew card {war_score2}")
+                    print(f"{name2} won War of {2*j} cards")
+                    print(f"{name1}: {p1_card_num}")
+                    print(f"{name2}: {p2_card_num} \n")
+                    i += 4
     if p1_card_num > p2_card_num:
         print(f"Winner: {name1}")
     elif p2_card_num > p1_card_num:
