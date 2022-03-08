@@ -79,7 +79,7 @@ print_out_my_favorite(var_1)
 print(var_2)
 
 Gives an error saying local variable refrenced before assignment
-We need to change the second if to elif
+We need to change the second if to elif or add global var_2 and global var_1 into the function
 
 Problem 2
 ---------
@@ -97,7 +97,7 @@ def print_out_my_favorite(favorite_pet):
 print_out_my_favorite(var_1)
 print(var_1 + " " + var_2)
 
-Nothing is wrong with the code
+Nothing is wrong with the code unless you want to modify the global variable.
 
 Problem 3
 ---------
@@ -113,7 +113,7 @@ def print_out_my_favorite(favorite_pet):
 print_out_my_favorite(var_1)
 print(var_2)
 
-Nothing is wrong with the code
+Nothing is wrong with the code unless you want to modify the global variable
 
 In script mode
 ---------------------
@@ -142,7 +142,7 @@ prints the final value of my_num
 
 Confirm that the printed values match what you expected.
 '''
-
+# Global Variable Modification Functions
 my_num = 5
 print(my_num)
 def add2():
@@ -157,5 +157,10 @@ def add2_and_multiply(multiplier):
     multiply_num(multiplier)
 add2_and_multiply(4)
 print(my_num)
+
+
+
+
+
 
 
