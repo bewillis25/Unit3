@@ -88,6 +88,7 @@ def rest():
     elif health_num < 5:
         health_num += 1
         add_day(2,5)
+        print("You gained 1 health during your rest")
         print(f"Your health is now {health_num}.")
 # adds 100lbs of food and takes 2-5 days (random)
 def hunt():
@@ -97,8 +98,10 @@ def hunt():
     add_day(2,5)
     if food_num > 500:
         food_num = 500
+        print("You already have 500 lbs of food")
     else:
         food_num += 100
+        print("You gained 100 lbs of food")
 # lists food, health, distance traveled, and date
 def status():
     global distance_traveled
